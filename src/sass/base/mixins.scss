@@ -23,3 +23,25 @@
     display: block;
 
 }
+
+@mixin angle-decoration {
+
+    &::before,
+    &::after {
+        position: absolute;
+        top: 0;
+        left: 0;
+        content: '';
+        background-color: $dark;
+    }
+
+    &::after {
+        width: 1px;
+        height: 200px;
+    }
+
+    &::before {
+        width: 200px;
+        height: 1px;
+    }
+}
