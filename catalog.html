@@ -139,17 +139,19 @@
                 <div class="pure-u-1 pure-u-md-1 pure-u-xl-2-5 pure-u-xxl-1-3 footer__forms">
                     <h4 class="title-h4">newsletter</h4>
                     <div class="footer__desc">Keep up to date with news and promotions</div>
-                    <form action="#">
+                    <form action="#" id="footer-form">
                         <fieldset class="footer__fieldset">
                             <div class="footer__input-block">
                                 <input class="footer__input" type="email" id="email-footer" name="email-footer"
                                     placeholder="Enter your e-mail" required>
                             </div>
+                            <div class="error-message-footer"></div>
                         </fieldset>
                         <label class="footer__label footer__check-block" for="checkbox-footer">
                             <input class="footer__checkbox" type="checkbox" id="checkbox-footer" required>
                             I agree with the <a href="#">terms</a>
                         </label>
+                        <div class="error-message-checkbox-footer"></div>
                         <button class="btn-submit footer__btn">submit</button>
                     </form>
                 </div>

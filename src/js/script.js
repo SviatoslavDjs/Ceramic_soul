@@ -6,6 +6,7 @@ import 'swiper/css/pagination';
 import "purecss/build/grids-min.css";
 import "purecss/build/grids-responsive-min.css";
 import "../sass/style.scss";
+import JustValidate from 'just-validate';
 
 const burger = document.querySelector(".burger"),
     close = document.querySelector(".header__menu-close"),
@@ -70,3 +71,78 @@ try {
     contents.forEach((c, i) => (c.style.display = i === 0 ? "flex" : "none"));
 
 } catch (e) { }
+
+try {
+    const validator = new JustValidate('form');
+    validator
+        .addField('#name', [
+            {
+                rule: 'required',
+                errorMessage: "Будь ласка введіть ім'я",
+            },
+            {
+                rule: 'minLength',
+                value: 2,
+            },
+        ])
+        .addField('#email', [
+            {
+                rule: 'required',
+                errorMessage: "Будь ласка введіть правильно вашу адресу",
+            },
+            {
+                rule: 'email',
+            },
+        ])
+        .addField('#question', [
+            {
+                rule: 'required',
+                errorMessage: "Повідомлення занадто коротке",
+            },
+            {
+                rule: 'minLength',
+                value: 5,
+            },
+        ], {
+            errorsContainer: document
+                .querySelector('#question')
+                .parentElement.querySelector('.error-message')
+        })
+        .addField('#checkbox', [
+            {
+                rule: 'required',
+                errorMessage: "Поставте галочку, що ви згідні",
+            },
+        ], {
+            errorsContainer: document
+                .querySelector('#checkbox')
+                .parentElement.parentElement.querySelector('.checkbox-error-message')
+        })
+} catch (e) { }
+try {
+    const validator = new JustValidate('#footer-form');
+    validator
+
+        .addField('#email-footer', [
+            {
+                rule: 'required',
+                errorMessage: "Будь ласка введіть правильно вашу адресу",
+            },
+            {
+                rule: 'email',
+            },
+        ])
+        .addField('#checkbox-footer', [
+            {
+                rule: 'required',
+                errorMessage: "Поставте галочку, що ви згідні",
+            },
+        ]
+            , {
+                errorsContainer: document
+                    .querySelector('#checkbox-footer')
+                    .parentElement.parentElement.querySelector('.error-message-checkbox-footer')
+            }
+        )
+} catch (e) { }
+

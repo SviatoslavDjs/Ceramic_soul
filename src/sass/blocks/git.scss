@@ -1,8 +1,14 @@
 @use "/src/sass/base/variables.scss" as *;
 
+
 .git {
     padding-top: 60px;
     position: relative;
+
+    just-validate-error-field {
+        border: none;
+        outline: 1px solid $ui-error;
+    }
 
     &__wrapper {
         margin-top: 60px;
