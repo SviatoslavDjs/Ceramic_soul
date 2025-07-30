@@ -74,10 +74,15 @@
         }
 
         &__cta {
-            margin-top: 50px;
+            animation-name: slideIn;
+            animation-duration: 3s;
+
+
         }
     }
 }
+
+
 
 @media screen and (min-width:1920px) {
     .promo {
