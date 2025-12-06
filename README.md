@@ -1,0 +1,1 @@
+This is a learning project that includes several pages themed around a ceramics products website. It was built using HTML, SCSS, and JavaScript. The website is responsive, optimized, and features interactive elements.
